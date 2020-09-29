@@ -10,6 +10,7 @@ Plug 'garbas/vim-snipmate'
 Plug 'tomtom/tlib_vim'
 call plug#end()
 call vundle#begin()
+Plugin 'jiangmiao/auto-pairs'
 Plugin 'MarcWeber/vim-addon-manager'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'garbas/vim-snipmate'

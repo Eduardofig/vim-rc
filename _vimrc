@@ -8,8 +8,14 @@ Plug 'VundleVim/Vundle.vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'garbas/vim-snipmate'
 Plug 'tomtom/tlib_vim'
+Plug 'maxmellon/vim-jsx-pretty'
 call plug#end()
 call vundle#begin()
+Plugin 'imeji/winresizer'
+Plugin 'Yggdroot/indentLine'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'mattn/emmet-vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'MarcWeber/vim-addon-manager'
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -28,29 +34,31 @@ Plugin 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'kien/ctrlp.vim' 
 Plugin 'chriskempson/base16-vim'
+Plugin 'preservim/nerdcommenter'
+Plugin 'Rainbow-Parenthesis'
 call vundle#end()
 " put this line first in ~/.vimrc
 set nocompatible | filetype indent plugin on | syn on
 
 fun! SetupVAM()
-  let c = get(g:, 'vim_addon_manager', {})
-  let g:vim_addon_manager = c
-  let c.plugin_root_dir = expand('$HOME', 1) . '/.vim/vim-addons'
+    let c = get(g:, 'vim_addon_manager', {})
+    let g:vim_addon_manager = c
+    let c.plugin_root_dir = expand('$HOME', 1) . '/.vim/vim-addons'
 
-  " Force your ~/.vim/after directory to be last in &rtp always:
-  " let g:vim_addon_manager.rtp_list_hook = 'vam#ForceUsersAfterDirectoriesToBeLast'
+    " Force your ~/.vim/after directory to be last in &rtp always:
+    " let g:vim_addon_manager.rtp_list_hook = 'vam#ForceUsersAfterDirectoriesToBeLast'
 
-  " most used options you may want to use:
-  " let c.log_to_buf = 1
-  " let c.auto_install = 0
-  let &rtp.=(empty(&rtp)?'':',').c.plugin_root_dir.'/vim-addon-manager'
-  if !isdirectory(c.plugin_root_dir.'/vim-addon-manager/autoload')
-    execute '!git clone --depth=1 git://github.com/MarcWeber/vim-addon-manager '
-        \       shellescape(c.plugin_root_dir.'/vim-addon-manager', 1)
-  endif
+    " most used options you may want to use:
+    " let c.log_to_buf = 1
+    " let c.auto_install = 0
+    let &rtp.=(empty(&rtp)?'':',').c.plugin_root_dir.'/vim-addon-manager'
+    if !isdirectory(c.plugin_root_dir.'/vim-addon-manager/autoload')
+        execute '!git clone --depth=1 git://github.com/MarcWeber/vim-addon-manager '
+                    \       shellescape(c.plugin_root_dir.'/vim-addon-manager', 1)
+    endif
 
-  " This provides the VAMActivate command, you could be passing plugin names, too
-  call vam#ActivateAddons([], {})
+    " This provides the VAMActivate command, you could be passing plugin names, too
+    call vam#ActivateAddons([], {})
 endfun
 call SetupVAM()
 " ACTIVATING PLUGINS
@@ -67,6 +75,7 @@ call vam#Scripts('~/.vim-scripts', {'tag_regex': '.*'})
 ActivateAddons vim-snippets snipmate
 nnoremap <SPACE> <Nop>
 let mapleader = " "
+let g:user_emmet_leader_key=','
 map <leader>h :wincmd h<CR>
 map <leader>j :wincmd j<CR>
 map <leader>k :wincmd k<CR>
@@ -76,9 +85,26 @@ nnoremap <Leader>pt :NERDTreeToggle<Enter>
 nnoremap <Leader>pt :NERDTreeToggle<Enter> 
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
+nmap <Leader>vs :vsplit<CR>
+nmap <Leader>; A;<Esc>
+nmap <Leader>T :below terminal <CR>
+nmap <Leader>t :tabnew <CR>
+nmap , <C-Y>
+nmap <Up> 5<C-W>-
+nmap <Down> 5<C-W>+
+nmap <Left> 10<C-W><
+nmap <Right> 10<C-W>>
 imap jj <Esc>
+imap JJ <Esc><Tab>
+imap zz <Esc>%a
+imap ZZ <Esc>%a<Tab>
+imap qq <Esc>%ajj%a
+imap QQ <Esc>%ajj%a<Tab>
+vmap , <C-Y>
 nnoremap <silent> <leader>gd :YcmCompleter GoTo<CR>
 nnoremap <silent> <leader>gr :YcmCompleter GoToReferences<CR>
+nnoremap <silent> <leader>pl :PluginInstall<Enter>
+nnoremap <silent> <leader>pc :PluginClean<Enter>
 " Edit vimr configuration file
 nnoremap <Leader>ve :e $MYVIMRC<CR>
 " " Reload vimr configuration file
@@ -98,14 +124,16 @@ set autoindent
 set smartcase
 set incsearch
 if has("gui_running")
-  if has("gui_gtk2")
-    set guifont=Inconsolata\ 12
-  elseif has("gui_macvim")
-    set guifont=Menlo\ Regular:h14
-  elseif has("gui_win32")
-    set guifont=Consolas:h11:cANSI
-  endif
+    if has("gui_gtk2")
+        set guifont=Inconsolata\ 12
+    elseif has("gui_macvim")
+        set guifont=Menlo\ Regular:h14
+    elseif has("gui_win32")
+        set guifont=Consolas:h11:cANSI
+    endif
+
 endif
 map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
-colorscheme base16-gruvbox-dark-soft
+"colorscheme base16-xcode-dusk
+colorscheme base16-nord
 imap <Tab> <Plug>snipMateNextOrTrigger

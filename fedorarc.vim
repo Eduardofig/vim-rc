@@ -1,5 +1,4 @@
 
-
 fun! SetupVAM()
     let c = get(g:, 'vim_addon_manager', {})
     let g:vim_addon_manager = c
@@ -45,10 +44,10 @@ Plug 'tomtom/tlib_vim'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'ryanoasis/vim-devicons'
 Plug 'mlaursen/vim-react-snippets'
+Plug 'luochen1990/rainbow'
 call plug#end()
 call vundle#begin()
 Plugin 'dracula/vim', { 'name': 'dracula' }
-Plugin 'frazrepo/vim-rainbow'
 Plugin 'ervandew/supertab'
 Plugin 'Yggdroot/indentLine'
 Plugin 'vim-airline/vim-airline'
@@ -75,7 +74,6 @@ Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'https://github.com/ctrlpvim/ctrlp.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'preservim/nerdcommenter'
-Plugin 'Rainbow-Parenthesis'
 call vundle#end()
 " put this line first in ~/.vimrc
 set nocompatible | filetype indent plugin on | syn on

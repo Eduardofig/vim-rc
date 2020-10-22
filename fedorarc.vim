@@ -73,6 +73,8 @@ Plugin 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'https://github.com/ctrlpvim/ctrlp.vim'
 Plugin 'chriskempson/base16-vim'
+Plugin 'rafi/awesome-vim-colorschemes'
+Plugin 'ajulraju/vim-colorscheme.visual'
 Plugin 'preservim/nerdcommenter'
 call vundle#end()
 " put this line first in ~/.vimrc
@@ -82,14 +84,18 @@ set nocompatible | filetype indent plugin on | syn on
 nnoremap <SPACE> <Nop>
 let mapleader = " "
 let g:user_emmet_leader_key=','
+let g:ctrlp_use_caching = 0
 let g:rainbow_active = 1
+let g:airline_theme='challenger_deep'
 map <leader>h :wincmd h<CR>
 map <leader>j :wincmd j<CR>
 map <leader>k :wincmd k<CR>
 map <leader>l :wincmd l<CR>
 nnoremap <Leader>gd :GoDer<Enter>
 nnoremap <Leader>pt :NERDTreeToggle<Enter>
+"nnoremap <Leader>pr :RainbowToggle<Enter>
 nnoremap <Leader>pt :NERDTreeToggle<Enter>
+nnoremap <Leader>gt :YcmCompleter GoTo<Enter>
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
 nmap <Leader>vs :vsplit<CR>
@@ -153,4 +159,38 @@ let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
-colorscheme dracula
+set background=dark
+
+highlight YcmErrorLine guibg=Blue
+highlight YcmErrorSign guibg=Blue
+
+" local syntax file - set colors on a per-machine basis:
+" vim: tw=0 ts=4 sw=4
+" Vim color file
+" Maintainer:	Ron Aaron <ron@mossbayeng.com>
+" Last Change:	2001 July 13
+
+set background=dark
+hi clear
+if exists("syntax_on")
+  syntax reset
+endif
+colorscheme zellner
+
+hi Visual term=reverse ctermfg=Black ctermbg=DarkMagenta gui=NONE guifg=Black guibg=Yellow
+
+" Fix colors of YCM
+highlight YcmWarningSign ctermfg=202 guifg=#ff5f00
+highlight YcmWarningSection ctermfg=202 guifg=#ff5f00 gui=underline cterm=underline
+highlight YcmErrorSection ctermfg=161 guifg=#d7005f gui=underline cterm=underline
+highlight YcmErrorSign ctermfg=161 guifg=#d7005f
+highlight clear SignColumn
+highlight clear TabLineFill
+highlight TabLine ctermbg=237 ctermfg=DarkMagenta
+highlight TabLineSel ctermfg=Magenta
+highlight Pmenu ctermbg=236 ctermfg=Magenta gui=bold
+"guifg=DarkRed guibg=DarkRed ctermbg=DarkRed 
+"
+let g:rainbow_conf = {
+\	'ctermfgs': ['95', '97', '1', '61'],
+\}

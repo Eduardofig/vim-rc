@@ -56,7 +56,7 @@ window:
 scrolling:
   # maximum number of lines in the scrollback buffer. Specifying '0' will
   # disable scrolling.
-  history: 100
+  history: 100000
 
   # Number of lines the viewport will move for every line scrolled when
   ##Colors Dracula
@@ -126,38 +126,34 @@ font:
 ## and cursor.background colors, otherwise invert the colors of the cursor.
 ## custom_cursor_colors: false
 
-#Colors Dracula
-# Colors (Hybrid)
+# Colors (Monokai Soda)
 colors:
   # Default colors
   primary:
-    background: '#27292c'
-    foreground: '#d0d2d1'
+    background: '#1a1a1a'
+    foreground: '#c4c5b5'
 
   # Normal colors
   normal:
-    black:   '#35383b'
-    red:     '#b05655'
-    green:   '#769972'
-    yellow:  '#e1a574'
-    blue:    '#7693ac'
-    magenta: '#977ba0'
-    cyan:    '#749e99'
-    white:   '#848b92'
+    black:   '#1a1a1a'
+    red:     '#f4005f'
+    green:   '#98e024'
+    yellow:  '#fa8419'
+    blue:    '#9d65ff'
+    magenta: '#f4005f'
+    cyan:    '#58d1eb'
+    white:   '#c4c5b5'
 
   # Bright colors
   bright:
-    black:   '#484c52'
-    red:     '#d27c7b'
-    green:   '#dffebe'
-    yellow:  '#f0d189'
-    blue:    '#96b1c9'
-    magenta: '#bfa5c7'
-    cyan:    '#9fc9c3'
-    white:   '#fcf7e2'
-
-  # Indexed Colors
-  #
+    black:   '#625e4c'
+    red:     '#f4005f'
+    green:   '#98e024'
+    yellow:  '#e0d561'
+    blue:    '#9d65ff'
+    magenta: '#f4005f'
+    cyan:    '#58d1eb'
+    white:   '#f6f6ef' #
   # The indexed colors include all colors from 16 to 256.
   # When these are not set, they're filled with sensible defaults.
   #
@@ -194,7 +190,7 @@ colors:
   #duration: 0
 
 # Background opacity
-background_opacity: 0.96
+background_opacity: 0.90
 
 # Key bindings
 #

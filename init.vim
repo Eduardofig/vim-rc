@@ -47,6 +47,8 @@ Plug 'luochen1990/rainbow'
 call plug#end()
 call vundle#begin()
 Plugin 'dracula/vim', { 'name': 'dracula' }
+"Plugin 'vim-python/python-syntax'
+Plugin 'kh3phr3n/python-syntax'
 Plugin 'sainnhe/edge'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'peitalin/vim-jsx-typescript'
@@ -115,8 +117,8 @@ nmap <Leader>cr :SCCompileRun<cr>
 nmap <Leader>nl :!clear<cr>
 imap jj <Esc>
 imap JJ <Esc><Tab>
-imap zz <Esc>%a
-imap ZZ <Esc>%a<Tab>
+imap zz <Esc>A
+imap ZZ <Esc>A
 imap qq <Esc>wa
 imap QQ <Esc>wa
 "imap <Tab> <Plug>snipMateNextOrTrigger
@@ -156,9 +158,9 @@ map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
 "colorscheme base16-xcode-dusk
 
 " make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
+let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-j>'
 
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<tab>"
@@ -208,7 +210,7 @@ hi Type gui=italic cterm=italic
 hi StorageClass gui=italic cterm=italic
 hi Identifier gui=italic cterm=italic
 hi Constant gui=italic cterm=italic
-"highlight TabLineSel ctermfg=Magenta
+highlight TabLineSel ctermfg=Magenta
 highlight Pmenu ctermbg=236 ctermfg=Magenta gui=bold
 " dark red
 hi tsxTagName guifg=#E06C75 ctermfg=DarkRed
@@ -232,3 +234,11 @@ autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
 let g:rainbow_conf = {
             \	'ctermfgs': ['95', '97', '1', '61'],
             \}
+"let g:python_highlight_indent_errors = 0
+"let g:python_highlight_space_errors = 0
+"let g:python_highlight_all = 1
+let python_self_cls_highlight = 1
+let python_no_parameter_highlight = 1
+hi pythonSelf ctermfg=168 cterm=italic
+hi pythonClass ctermfg=217 
+hi pythonSpaceError ctermbg=NONE

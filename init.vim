@@ -1,5 +1,7 @@
 fun! SetupVAM()
     let c = get(g:, 'vim_addon_manager', {})
+fun! SetupVAM()
+    let c = get(g:, 'vim_addon_manager', {})
     let g:vim_addon_manager = c
     let c.plugin_root_dir = expand('$HOME', 1) . '/.vim/vim-addons'
 
@@ -107,6 +109,8 @@ nmap <Leader>vs :vsplit<CR>
 nmap <Leader>; A;<Esc>
 nmap <Leader>T :below terminal <CR>
 nmap <Leader>t :tabnew <CR>
+nmap <Leader>~ viw~e
+imap <C-u> <Esc>viw~ea
 nmap , <C-Y>
 nmap <Up> 5<C-W>-
 nmap <Down> 5<C-W>+

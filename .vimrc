@@ -107,6 +107,8 @@ nmap <Leader>vs :vsplit<CR>
 nmap <Leader>; A;<Esc>
 nmap <Leader>T :below terminal <CR>
 nmap <Leader>t :tabnew <CR>
+nmap <Leader>~ viw~e
+imap <C-u> <Esc>viw~ea
 nmap , <C-Y>
 nmap <Up> 5<C-W>-
 nmap <Down> 5<C-W>+
@@ -243,4 +245,3 @@ hi pythonSelf ctermfg=168 cterm=italic
 hi pythonClass ctermfg=217 
 hi pythonSpaceError ctermbg=NONE
 set mouse=a
-set ttymouse=sgr

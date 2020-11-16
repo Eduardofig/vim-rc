@@ -1,7 +1,5 @@
 fun! SetupVAM()
     let c = get(g:, 'vim_addon_manager', {})
-fun! SetupVAM()
-    let c = get(g:, 'vim_addon_manager', {})
     let g:vim_addon_manager = c
     let c.plugin_root_dir = expand('$HOME', 1) . '/.vim/vim-addons'
 

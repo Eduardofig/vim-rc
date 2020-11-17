@@ -17,6 +17,8 @@ alias vf='vifm'
 alias q='exit'
 alias nv='nvim'
 alias c='clear'
+alias b='byobu'
+alias edex-ui='cd ~/edex-ui && npm start '
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=

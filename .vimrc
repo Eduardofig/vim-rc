@@ -245,3 +245,4 @@ hi pythonSelf ctermfg=168 cterm=italic
 hi pythonClass ctermfg=217 
 hi pythonSpaceError ctermbg=NONE
 set mouse=a
+set ttymouse=sgr

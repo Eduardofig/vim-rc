@@ -245,4 +245,5 @@ hi pythonSelf ctermfg=168 cterm=italic
 hi pythonClass ctermfg=217 
 hi pythonSpaceError ctermbg=NONE
 set mouse=a
+let g:ycm_autoclose_preview_window_after_insertion = 1
 set ttymouse=sgr

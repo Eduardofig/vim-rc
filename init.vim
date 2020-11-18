@@ -244,4 +244,5 @@ let python_no_parameter_highlight = 1
 hi pythonSelf ctermfg=168 cterm=italic
 hi pythonClass ctermfg=217 
 hi pythonSpaceError ctermbg=NONE
+let g:ycm_autoclose_preview_window_after_insertion = 1
 set mouse=a

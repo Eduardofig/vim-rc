@@ -48,6 +48,7 @@ call plug#end()
 call vundle#begin()
 Plugin 'dracula/vim', { 'name': 'dracula' }
 "Plugin 'vim-python/python-syntax'
+Plugin 'szw/vim-maximizer'
 Plugin 'kh3phr3n/python-syntax'
 Plugin 'sainnhe/edge'
 Plugin 'leafgarland/typescript-vim'
@@ -244,6 +245,5 @@ let python_no_parameter_highlight = 1
 hi pythonSelf ctermfg=168 cterm=italic
 hi pythonClass ctermfg=217 
 hi pythonSpaceError ctermbg=NONE
-set mouse=a
 let g:ycm_autoclose_preview_window_after_insertion = 1
-set ttymouse=sgr
+set mouse=a

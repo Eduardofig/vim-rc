@@ -48,6 +48,7 @@ call plug#end()
 call vundle#begin()
 Plugin 'dracula/vim', { 'name': 'dracula' }
 "Plugin 'vim-python/python-syntax'
+Plugin 'szw/vim-maximizer'
 Plugin 'kh3phr3n/python-syntax'
 Plugin 'sainnhe/edge'
 Plugin 'leafgarland/typescript-vim'

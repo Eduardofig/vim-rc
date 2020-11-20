@@ -89,7 +89,7 @@ set nocompatible | filetype indent plugin on | syn on
 "ActivateAddons vim-snippets snipmate
 nnoremap <SPACE> <Nop>
 let mapleader = " "
-let g:user_emmet_leader_key=','
+let g:user_emmet_leader_key='\'
 let g:ctrlp_use_caching = 0
 let g:rainbow_active = 1
 let g:airline_theme='challenger_deep'
@@ -105,12 +105,16 @@ nnoremap <Leader>gt :YcmCompleter GoTo<Enter>
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
 nmap <Leader>vs :vsplit<CR>
+nmap <Leader>m :MaximizerToggle<CR>
 nmap <Leader>; A;<Esc>
 nmap <Leader>T :below terminal <CR>
 nmap <Leader>t :tabnew <CR>
 nmap <Leader>~ viw~e
 imap <C-u> <Esc>viw~ea
-nmap , <C-Y>
+noremap! <C-BS> <C-w>
+noremap! <C-h> <C-w>
+inoremap <C-w> <C-\><C-o>dB
+inoremap <C-BS> <C-\><C-o>db
 nmap <Up> 5<C-W>-
 nmap <Down> 5<C-W>+
 nmap <Left> 10<C-W><
@@ -125,7 +129,6 @@ imap ZZ <Esc>A
 imap qq <Esc>wa
 imap QQ <Esc>wa
 "imap <Tab> <Plug>snipMateNextOrTrigger
-vmap , <C-Y>
 nnoremap <silent> <leader>gd :YcmCompleter GoTo<CR>
 nnoremap <silent> <leader>gr :YcmCompleter GoToReferences<CR>
 nnoremap <silent> <leader>pl :PluginInstall<Enter>

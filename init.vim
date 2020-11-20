@@ -50,7 +50,6 @@ Plugin 'dracula/vim', { 'name': 'dracula' }
 "Plugin 'vim-python/python-syntax'
 Plugin 'szw/vim-maximizer'
 Plugin 'kh3phr3n/python-syntax'
-Plugin 'sainnhe/edge'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'peitalin/vim-jsx-typescript'
 Plugin 'xuhdev/SingleCompile'
@@ -68,10 +67,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-"Plugin 'vim-scripts/AutoComplPop'
-"Plugin 'ajh17/VimCompletesMe.git'
 Plugin 'junegunn/vim-easy-align'
-Plugin 'https://github.com/junegunn/vim-github-dashboard.git'
 Plugin 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plugin 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plugin 'rdnetto/YCM-Generator', { 'branch': 'stable' }
@@ -90,7 +86,7 @@ set nocompatible | filetype indent plugin on | syn on
 nnoremap <SPACE> <Nop>
 let mapleader = " "
 let g:user_emmet_leader_key='\'
-let g:ctrlp_use_caching = 0
+let g:ctrlp_use_caching = 1
 let g:rainbow_active = 1
 let g:airline_theme='challenger_deep'
 map <leader>h :wincmd h<CR>
@@ -128,6 +124,10 @@ imap zz <Esc>A
 imap ZZ <Esc>A
 imap qq <Esc>wa
 imap QQ <Esc>wa
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 "imap <Tab> <Plug>snipMateNextOrTrigger
 nnoremap <silent> <leader>gd :YcmCompleter GoTo<CR>
 nnoremap <silent> <leader>gr :YcmCompleter GoToReferences<CR>

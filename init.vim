@@ -49,6 +49,7 @@ call plug#end()
 call vundle#begin()
 Plugin 'dracula/vim', { 'name': 'dracula' }
 "Plugin 'vim-python/python-syntax'
+Plugin 'jelera/vim-javascript-syntax'
 Plugin 'szw/vim-maximizer'
 Plugin 'kh3phr3n/python-syntax'
 Plugin 'leafgarland/typescript-vim'
@@ -241,7 +242,7 @@ set nobackup
 set nowritebackup
 
 " Give more space for displaying messages.
-set cmdheight=2
+set cmdheight=1
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
@@ -392,3 +393,7 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 hi CocErrorSign ctermfg=160
+hi CocErrorHighlight ctermfg=160 cterm=underline
+hi CocWarningHighlight ctermfg=Brown cterm=underline
+hi CocInfoSign ctermfg=Brown
+hi CocInfoHighlight ctermfg=Brown cterm=underline

@@ -94,9 +94,11 @@ map <leader>j :wincmd j<CR>
 map <leader>k :wincmd k<CR>
 map <leader>l :wincmd l<CR>
 nnoremap <Leader>gd :GoDer<Enter>
-nnoremap <Leader>n :NERDTreeToggle<Enter>
+nnoremap <Leader>ne :NERDTreeToggle<Enter>
+nnoremap J gT
+nnoremap K gt
 "nnoremap <Leader>pr :RainbowToggle<Enter>
-nmap <S-Enter> O<Esc>
+nmap + O<Esc>
 nmap <CR> o<Esc>
 nmap <Leader>vs :vsplit<CR>
 nmap <Leader>m :MaximizerToggle<CR>
@@ -132,7 +134,7 @@ nnoremap <silent> <leader>pc :PluginClean<Enter>
 " Edit vimr configuration file
 nnoremap <Leader>ve :e $MYVIMRC<CR>
 " " Reload vimr configuration file
-nnoremap <Leader>r :source $MYVIMRC<CR>
+nnoremap <Leader>rr :source $MYVIMRC<CR>
 vnoremap <C-c> "*y 
 syntax on
 set number
@@ -276,8 +278,8 @@ endif
 
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+"inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              "\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
@@ -291,7 +293,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+nnoremap <leader>do :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)

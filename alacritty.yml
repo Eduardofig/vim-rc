@@ -190,7 +190,7 @@ colors:
   #duration: 0
 
 # Background opacity
-background_opacity: 0.90
+background_opacity: 0.85
 
 # Key bindings
 #
